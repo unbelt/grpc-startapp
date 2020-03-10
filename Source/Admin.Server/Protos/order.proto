@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option csharp_namespace = "Admin.Server";
+
+package Order;
+
+service OrderAdmin {
+    rpc GetOrderInfo (OrderRequest) returns (OrderModel);
+}
+
+message OrderRequest {
+    int32 orderId = 1;
+}
+
+message OrderModel {
+    string name = 1;
+    int32 price = 2;
+    bool inStock = 3;
+}
